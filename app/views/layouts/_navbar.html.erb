@@ -1,0 +1,39 @@
+<nav class="navbar navbar-light bg-faded">
+  <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
+  <div class="collapse navbar-toggleable-md" id="navbarResponsive">
+    <%= link_to "Rails Quickstart", root_path, class: "navbar-brand" %>
+    <ul class="nav navbar-nav">
+      <li class="nav-item active">
+        <%= link_to 'Home <span class="sr-only">(current)'.html_safe, root_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to t("users"), users_path, class: "nav-link" %>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav float-lg-right">
+      <li class="nav-item">
+        <% if logged_in? %>
+          <li class="nav-item dropdown">
+
+            <%= link_to "#{current_user.firstname} #{current_user.lastname}", user_path(current_user), class: "nav-link dropdown-toggle", id:"responsiveNavbarDropdown", "data-toggle":"dropdown", "aria-haspopup":"true", "aria-expanded":"false" %>
+            <!--<a class="nav-link dropdown-toggle" href="http://example.com" id="responsiveNavbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Don Joe</a>-->
+            <div class="dropdown-menu" aria-labelledby="responsiveNavbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        <% else %>
+          <%= link_to t("sign_up"), signup_path, class: "nav-link" %>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <% if logged_in? %>
+          <%= link_to t("logout"), logout_path, method: :delete, class: "nav-link" %>
+        <% else %>
+          <%= link_to t("login"), login_path, class: "nav-link" %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</nav>

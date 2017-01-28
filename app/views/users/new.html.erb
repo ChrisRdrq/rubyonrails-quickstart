@@ -1,0 +1,36 @@
+<% provide(:title, t("sign_up")) %>
+<div class="row">
+  <h3 class="text-xs-center mt-3"><%= t("sign_up") %></h3>
+  <div class="col-md-6 offset-md-3">
+    <div class="card card-block">
+      <%= form_for(@user, url: users_path) do |f| %>
+
+        <%= render 'shared/form_validation_messages', object: f.object %>
+
+        <div class="form-group">
+          <%= f.label :firstname, t('firstname') %>
+          <%= f.text_field :firstname, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :lastname, t('lastname') %>
+          <%= f.text_field :lastname, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :email, t('email') %>
+          <%= f.text_field :email, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password, t('password') %>
+          <%= f.password_field :password, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password_confirmation, t('password_confirmation') %>
+          <%= f.password_field :password_confirmation, class: "form-control" %>
+        </div>
+
+        <%= f.submit t('sign_up'), class: "col-xs-12 btn btn-primary" %>
+
+      <% end %>
+    </div>
+  </div>
+</div>
