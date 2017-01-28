@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails quickstart app.
 
-Things you may want to cover:
+It provides:
 
-* Ruby version
+* users management
 
-* System dependencies
+* session(login/logout) concept
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* sign up confirmation mail with password reset option
