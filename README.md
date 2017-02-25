@@ -1,11 +1,13 @@
-# README
+#Ruby on Rails quickstart
+
+##What is it for?
 
 Ruby on Rails quickstart app.
 
-It provides:
+It includes:
 
 * users management
 
-* session(login/logout) concept
+* user login/logout
 
-* sign up confirmation mail with password reset option
+* sign up confirmation email and 'forgot password' option
